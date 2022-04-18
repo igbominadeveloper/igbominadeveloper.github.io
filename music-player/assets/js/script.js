@@ -8,7 +8,7 @@ const song = new Audio('assets/mp3/asa-eyo.mp3');
 let interval = null;
 
 const playSong = () => {
-  // song.play();
+  song.play();
 
   playIcon.classList.add('paused');
 
@@ -21,7 +21,7 @@ const playSong = () => {
 };
 
 const pauseSong = () => {
-  // song.pause();
+  song.pause();
 
   hideBars();
 
