@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.music-player {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+button {
+  width: 100px;
+  cursor: pointer;
+
+  background: transparent;
+  border: none;
+}
+
+.pause-icon,
+.play-icon {
+  scale: 1;
+  transform: rotate(0deg);
+  transition: all 1s ease-in-out;
+}
+
+.paused {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  scale: 0;
+  transform: rotate(-45deg);
+}
+
+.bars {
+  display: flex;
+  gap: 5px;
+  /* if you are wondering why the min-height, comment it out to see its effect 😀 */
+  min-height: 60px;
+  transform: rotate(180deg);
+}
+/* TODO fix why the bars are upside down */
+.bar {
+  width: 6px;
+  height: 0;
+  background: linear-gradient(#000, #fff);
+  border-radius: 5px;
+  transition: height 0.5s linear;
+}
