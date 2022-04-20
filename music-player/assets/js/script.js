@@ -2,8 +2,13 @@ const button = document.getElementsByTagName('button')[0];
 const pauseIcon = document.getElementsByClassName('pause-icon')[0];
 const playIcon = document.getElementsByClassName('play-icon')[0];
 const bars = document.getElementsByClassName('bar');
+const fileNameContainer = document.querySelector('.file-name');
 
 const song = new Audio('assets/mp3/asa-eyo.mp3');
+console.log(song.src);
+
+const fileName = song.src.split('/').pop();
+fileNameContainer.innerHTML = `Playing ${fileName}`;
 
 let interval = null;
 

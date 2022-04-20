@@ -35,6 +35,20 @@ button {
   right: -10px;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pause-icon {
+  animation: rotate 2s infinite;
+}
+
 .paused {
   opacity: 0;
   width: 0;
@@ -56,4 +70,9 @@ button {
   background: linear-gradient(#000, #fff);
   border-radius: 5px;
   transition: height 0.5s linear;
+}
+
+.file-name {
+  position: absolute;
+  top: 0;
 }
