@@ -1,6 +1,7 @@
 ### Missing features
 
-- stop the song once its finished playing ❗
+- [x] stop the song once its finished playing
+- show the name of the song being played
 - Add the song url you want to play
 - select from a list of songs we have
 - show music player controls - repeat, volume, pause, stop, rewind, fast-forward

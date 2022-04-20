@@ -17,33 +17,36 @@ body {
 }
 
 button {
-  width: 100px;
+  width: 80px;
   cursor: pointer;
 
   background: transparent;
   border: none;
+  position: relative;
 }
 
 .pause-icon,
 .play-icon {
-  scale: 1;
+  transform: scale(1);
   transform: rotate(0deg);
   transition: all 1s ease-in-out;
+  position: absolute;
+  top: -120px;
+  right: -10px;
 }
 
 .paused {
   opacity: 0;
   width: 0;
   height: 0;
-  scale: 0;
+  transform: scale(0);
   transform: rotate(-45deg);
 }
 
 .bars {
   display: flex;
-  gap: 5px;
-  /* if you are wondering why the min-height, comment it out to see its effect 😀 */
-  min-height: 60px;
+  gap: 8px;
+  min-height: 200px;
   transform: rotate(180deg);
 }
 /* TODO fix why the bars are upside down */

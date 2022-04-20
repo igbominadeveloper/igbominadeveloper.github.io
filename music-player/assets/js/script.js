@@ -7,6 +7,17 @@ const song = new Audio('assets/mp3/asa-eyo.mp3');
 
 let interval = null;
 
+const resetToDefault = () => {
+  hideBars();
+
+  playIcon.classList.remove('paused');
+
+  pauseIcon.classList.add('paused');
+
+  button.removeEventListener('click', pauseSong);
+  button.addEventListener('click', playSong);
+};
+
 const playSong = () => {
   song.play();
 
@@ -18,28 +29,25 @@ const playSong = () => {
 
   button.removeEventListener('click', playSong);
   button.addEventListener('click', pauseSong);
+
+  song.addEventListener('ended', () => {
+    resetToDefault();
+  });
 };
 
 const pauseSong = () => {
   song.pause();
 
-  hideBars();
-
-  playIcon.classList.remove('paused');
-
-  pauseIcon.classList.add('paused');
-
-  button.removeEventListener('click', pauseSong);
-  button.addEventListener('click', playSong);
+  resetToDefault();
 };
 
 const showBars = () => {
   interval = setInterval(() => {
     for (let i = 0; i < bars.length; i++) {
-      const randomNumber = Math.floor(Math.random() * 5) + 1;
+      const randomNumber = Math.floor(Math.random() * bars.length) + 1;
       // number between 1 * 5
 
-      const height = randomNumber * 10;
+      const height = randomNumber * 20;
       // we are multiplying the random number by 10 to get the height of the bar
 
       bars[i].style.height = `${height}px`;
