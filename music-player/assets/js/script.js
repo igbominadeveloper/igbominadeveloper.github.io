@@ -1,16 +1,21 @@
-const button = document.getElementsByTagName('button')[0];
+const button = document.querySelector('.play-pause');
 const pauseIcon = document.getElementsByClassName('pause-icon')[0];
 const playIcon = document.getElementsByClassName('play-icon')[0];
 const bars = document.getElementsByClassName('bar');
 const fileNameContainer = document.querySelector('.file-name');
+const songUrlInput = document.querySelector('#song-url');
 
 const song = new Audio('assets/mp3/asa-eyo.mp3');
-console.log(song.src);
 
-const fileName = song.src.split('/').pop();
-fileNameContainer.innerHTML = `Playing ${fileName}`;
+const fileName = () => song.src.split('/').pop();
+
+const setFileName = () => {
+  fileNameContainer.innerHTML = `Filename: ${fileName()}`;
+};
 
 let interval = null;
+
+setFileName();
 
 const resetToDefault = () => {
   hideBars();
@@ -76,3 +81,36 @@ button.addEventListener('click', () => {
     pauseSong();
   }
 });
+
+const changeRoute = (route) => {
+  location.hash = route;
+};
+
+const changeSong = () => {
+  const songUrl = songUrlInput.value;
+
+  if (songUrl.length === 0) return;
+
+  const fileExtension = songUrl.split('.').pop();
+
+  if (fileExtension !== 'mp3') {
+    alert('Please enter a valid mp3 file');
+    return;
+  }
+
+  song.src = songUrl;
+
+  clearInput();
+  closeModal();
+  pauseSong();
+  setFileName();
+};
+
+const closeModal = () => {
+  clearInput();
+  changeRoute('#');
+};
+
+const clearInput = () => {
+  songUrlInput.value = '';
+};

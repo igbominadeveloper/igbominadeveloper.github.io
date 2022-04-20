@@ -14,9 +14,11 @@ body {
   justify-content: center;
 
   gap: 5px;
+
+  padding: 20px;
 }
 
-button {
+.play-pause {
   width: 80px;
   cursor: pointer;
 
@@ -63,6 +65,7 @@ button {
   min-height: 200px;
   transform: rotate(180deg);
 }
+
 /* TODO fix why the bars are upside down */
 .bar {
   width: 6px;
@@ -72,7 +75,39 @@ button {
   transition: height 0.5s linear;
 }
 
-.file-name {
+.details {
   position: absolute;
   top: 0;
+}
+
+.file-name {
+  margin: 20px 0;
+}
+
+.change-file {
+  cursor: pointer;
+  border: none;
+  color: #000;
+  background: transparent;
+  padding: 0;
+}
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal:target {
+  visibility: visible;
+  transition: opacity 0.4s;
+  opacity: 1;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: gray;
 }
