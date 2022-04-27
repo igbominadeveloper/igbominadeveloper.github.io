@@ -1,0 +1,42 @@
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: #000;
+}
+
+#app {
+  /* transform: scale(0); */
+  animation: grow 1s ease-out;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  outline: 1px solid #ccc;
+  height: 5rem;
+  width: 5rem;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
