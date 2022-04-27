@@ -17,6 +17,26 @@
           </template>
         </div>
       </template>
+
+      <div class="controls">
+        <div class="control">
+          <label> Guesses Allowed: </label>
+          <select x-model.number="guessesAllowed">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+          </select>
+        </div>
+
+        <div class="control">
+          <label> Word Length: </label>
+          <select x-model.number="wordLength">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+          </select>
+        </div>
+      </div>
     </div>
   </body>
 </html>
