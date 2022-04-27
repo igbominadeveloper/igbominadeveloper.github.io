@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wordle</title>
     <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    /> -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app" x-data="game" @keypress.window="handleKeyPress">
+    <div id="app" x-data="game" @keyUp.window="handleKeyPress">
       <template x-for="row in board">
         <div class="row">
           <template x-for="(length, index) in row">

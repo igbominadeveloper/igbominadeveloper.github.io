@@ -7,6 +7,7 @@ body {
   display: grid;
   place-items: center;
   background: #000;
+  font-family: Ubuntu;
 
   color: #fff;
 }
