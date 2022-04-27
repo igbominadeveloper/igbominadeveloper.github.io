@@ -24,6 +24,11 @@ body {
   outline: 1px solid #ccc;
   height: 5rem;
   width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 
 .controls {

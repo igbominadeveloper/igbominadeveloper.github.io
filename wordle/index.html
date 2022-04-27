@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app" x-data="{guessesAllowed: 5, wordLength: 5 }">
-      <template x-for="row in guessesAllowed">
+    <div id="app" x-data="game" @keypress.window="handleKeyPress">
+      <template x-for="row in board">
         <div class="row">
-          <template x-for="length in wordLength">
-            <div class="column"></div>
+          <template x-for="(length, index) in row">
+            <div class="column" x-text="row[index]"></div>
           </template>
         </div>
       </template>
@@ -38,5 +38,7 @@
         </div>
       </div>
     </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
