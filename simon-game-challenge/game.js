@@ -38,7 +38,7 @@ function generateNextRandomColor() {
 }
 
 function playSoundAndAnimate() {
-  let audio = new Audio('/sounds/' + randomColor + '.mp3');
+  let audio = new Audio('sounds/' + randomColor + '.mp3');
   audio.play();
   $('#' + randomColor).animate({ opacity: '0.5' }, 300, function () {
     $('#' + randomColor).animate({ opacity: '1' });
@@ -88,6 +88,6 @@ function gameOver() {
   setTimeout(function () {
     document.querySelector('body').classList.remove('game-over');
   }, 500);
-  let audio = new Audio('/sounds/wrong.mp3');
+  let audio = new Audio('sounds/wrong.mp3');
   audio.play();
 }
