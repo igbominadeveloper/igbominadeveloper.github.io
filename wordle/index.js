@@ -76,11 +76,12 @@ document.addEventListener('alpine:init', () => {
         // check the current word for correctness
         // for each character in the word, check if it is in the same position as in the original word
         const rowTilesNow = rowTiles.map((tile, index) => {
-          // debugger;
           if (tile.word === this.currentWord[index]) {
             tile.class = 'green';
-          } else if (this.currentWord.includes(tile.word)) {
+          } else if (this.currentWord.includes(tile.word.toLowerCase())) {
             tile.class = 'yellow';
+          } else {
+            tile.class = 'grey';
           }
           return tile;
         });

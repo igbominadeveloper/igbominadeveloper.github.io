@@ -33,6 +33,7 @@ body {
 
 .row {
   display: flex;
+  gap: 10px;
   transition: all 0.5s ease-out;
 }
 
@@ -45,6 +46,15 @@ body {
   justify-content: center;
   font-size: 3rem;
   text-transform: uppercase;
+  gap: 10px;
+
+  border-radius: 8px;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .controls {
@@ -77,22 +87,21 @@ select {
   color: #000;
 }
 
+.grey {
+  background: grey;
+  color: #fff;
+}
+
 .keyboard {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.keyboard .row {
-  margin: 0.2rem;
-  display: flex;
   gap: 10px;
 }
 
 .key {
   cursor: pointer;
-  border-radius: 8px;
   height: 3rem;
   width: unset;
   min-width: 3rem;
