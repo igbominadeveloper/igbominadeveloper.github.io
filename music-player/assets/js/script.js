@@ -29,6 +29,7 @@ const resetToDefault = () => {
 };
 
 const playSong = () => {
+  debugger;
   song.play();
 
   playIcon.classList.add('paused');
@@ -93,10 +94,10 @@ const changeSong = () => {
 
   const fileExtension = songUrl.split('.').pop();
 
-  if (fileExtension !== 'mp3') {
-    alert('Please enter a valid mp3 file');
-    return;
-  }
+  // if (fileExtension !== 'mp3') {
+  //   alert('Please enter a valid mp3 file');
+  //   return;
+  // }
 
   song.src = songUrl;
 

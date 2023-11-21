@@ -1,7 +1,7 @@
 document.addEventListener('alpine:init', () => {
   Alpine.data('game', () => ({
-    guessesAllowed: 6,
-    wordLength: 6,
+    guessesAllowed: 5,
+    wordLength: 5,
     currentRowIndex: 0,
     currentTileIndex: 0,
     wordBank: ['gloats', 'fights', 'apples', 'brains', 'pollen'],
@@ -12,6 +12,10 @@ document.addEventListener('alpine:init', () => {
       this.resetBoard();
 
       this.getNextWord();
+    },
+
+    get currentTileCharacter() {
+      return this.board[this.currentRowIndex][this.currentTileIndex].word;
     },
 
     resetBoard() {
@@ -87,17 +91,32 @@ document.addEventListener('alpine:init', () => {
     },
 
     backspaceKeyPressed() {
-      debugger;
-
-      if (
-        this.currentTileIndex === 0 &&
-        this.board[this.currentRowIndex][0].word === ''
-      ) {
+      if (this.currentTileCharacter === '' && this.currentTileIndex === 0) {
         return;
       }
 
+      if (this.currentTileCharacter === '') {
+        --this.currentTileIndex;
+      }
+
       this.setCurrentTile({ word: '' });
-      this.currentTileIndex--;
+
+      //if the rowindex and the tileindex === 0 && word is empty, return
+      // if the tileindex is 0 and the word is empty
+      // if there is a word index
+      // if (
+      //   this.currentTileIndex === 0 &&
+      //   this.board[this.currentRowIndex][0].word === ''
+      // ) {
+      //   return;
+      // }
+      // if (this.board[this.currentRowIndex][0].word !== '') {
+      //   --this.currentTileIndex;
+      // }
+      // if (this.currentTileIndex === 0) {
+      //   return;
+      // }
+      // this.currentTileIndex--;
     },
 
     fillTileWithKeyPressed(key) {
