@@ -1,10 +1,14 @@
+document.addEventListener('alpine:initialized', () => {
+  //we want to focus on the game element
+});
+
 document.addEventListener('alpine:init', () => {
   Alpine.data('game', () => ({
     guessesAllowed: 5,
     wordLength: 5,
     currentRowIndex: 0,
     currentTileIndex: 0,
-    wordBank: ['gloats', 'fights', 'apples', 'brains', 'pollen'],
+    wordBank: ['gloat', 'fight', 'apple', 'brain', 'polar'],
     currentWord: '',
     tiles: [],
 
@@ -16,6 +20,10 @@ document.addEventListener('alpine:init', () => {
 
     get currentTileCharacter() {
       return this.board[this.currentRowIndex][this.currentTileIndex].word;
+    },
+
+    get allGuessesUsed() {
+      return this.guessesAllowed === this.currentRowIndex + 1;
     },
 
     resetBoard() {
@@ -62,6 +70,8 @@ document.addEventListener('alpine:init', () => {
       const rowTiles = this.board[this.currentRowIndex];
       const word = rowTiles.map((tile) => tile.word).join('');
 
+      if (this.allGuessesUsed) return;
+
       if (word.length === this.wordLength) {
         // check the current word for correctness
         // for each character in the word, check if it is in the same position as in the original word
@@ -79,7 +89,8 @@ document.addEventListener('alpine:init', () => {
 
         // if the tile is perfect
         if (word === this.currentWord) {
-          this.resetBoard();
+          this.tiles.push(word);
+          this.getNextWord();
         }
 
         this.currentTileIndex = 0;
@@ -91,7 +102,10 @@ document.addEventListener('alpine:init', () => {
     },
 
     backspaceKeyPressed() {
-      if (this.currentTileCharacter === '' && this.currentTileIndex === 0) {
+      if (
+        (this.currentTileCharacter === '' && this.currentTileIndex === 0) ||
+        this.allGuessesUsed
+      ) {
         return;
       }
 
@@ -100,23 +114,6 @@ document.addEventListener('alpine:init', () => {
       }
 
       this.setCurrentTile({ word: '' });
-
-      //if the rowindex and the tileindex === 0 && word is empty, return
-      // if the tileindex is 0 and the word is empty
-      // if there is a word index
-      // if (
-      //   this.currentTileIndex === 0 &&
-      //   this.board[this.currentRowIndex][0].word === ''
-      // ) {
-      //   return;
-      // }
-      // if (this.board[this.currentRowIndex][0].word !== '') {
-      //   --this.currentTileIndex;
-      // }
-      // if (this.currentTileIndex === 0) {
-      //   return;
-      // }
-      // this.currentTileIndex--;
     },
 
     fillTileWithKeyPressed(key) {
