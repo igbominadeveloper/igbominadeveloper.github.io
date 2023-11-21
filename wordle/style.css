@@ -3,6 +3,14 @@ html {
   height: 100%;
 }
 
+:root {
+  --gray: #a4aec4;
+  --yellow: #f3c237;
+  --white: #fff;
+  --black: #000;
+  --green: #79b851;
+}
+
 *,
 ::before,
 ::after {
@@ -14,10 +22,10 @@ html {
 body {
   display: grid;
   place-items: center;
-  background: #000;
+  background: var(--black);
   font-family: Ubuntu;
 
-  color: #fff;
+  color: var(--white);
 }
 
 #app {
@@ -38,13 +46,13 @@ body {
 }
 
 .column {
-  outline: 1px solid #ccc;
-  height: 5rem;
-  width: 5rem;
+  outline: 1px solid var(--gray);
+  height: 4rem;
+  width: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   gap: 10px;
 
@@ -78,18 +86,18 @@ select {
 }
 
 .green {
-  background: green;
-  color: #fff;
+  background: var(--green);
+  color: var(--white);
 }
 
 .yellow {
-  background: yellow;
-  color: #000;
+  background: var(--yellow);
+  color: var(--white);
 }
 
 .grey {
-  background: grey;
-  color: #fff;
+  background: #a4aec4;
+  color: var(--white);
 }
 
 .keyboard {
@@ -111,7 +119,7 @@ select {
 }
 
 .key:hover {
-  background: #cccc;
+  background: var(--gray);
 }
 
 @media only screen and (max-width: 600px) {
