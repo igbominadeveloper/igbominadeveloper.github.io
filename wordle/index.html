@@ -16,35 +16,77 @@
   </head>
   <body>
     <div id="app" x-data="game" @keyUp.window="handleKeyPress">
-      <template x-for="row in board">
-        <div class="row">
-          <template x-for="(length, index) in row">
-            <div
-              class="column"
-              x-text="row[index].word"
-              :class="row[index]['class']"
-            ></div>
+      <div class="container">
+        <div class="controls">
+          <div class="control">
+            <label> Guesses Allowed: </label>
+            <select x-model.number="guessesAllowed">
+              <option>5</option>
+              <option>4</option>
+              <option>3</option>
+            </select>
+          </div>
+
+          <div class="control">
+            <label> Word Length: </label>
+            <select x-model.number="wordLength">
+              <option>5</option>
+              <option>4</option>
+              <option>3</option>
+            </select>
+          </div>
+        </div>
+        <div class="board">
+          <template x-for="row in board">
+            <div class="row">
+              <template x-for="(length, index) in row">
+                <div
+                  class="column"
+                  x-text="row[index].word"
+                  :class="row[index]['class']"
+                ></div>
+              </template>
+            </div>
           </template>
         </div>
-      </template>
 
-      <div class="controls">
-        <div class="control">
-          <label> Guesses Allowed: </label>
-          <select x-model.number="guessesAllowed">
-            <option>5</option>
-            <option>4</option>
-            <option>3</option>
-          </select>
-        </div>
+        <!-- keyboard -->
+        <div class="keyboard">
+          <!-- Generate QWERTY keyboard keys using HTML -->
+          <div class="row">
+            <div class="column">Q</div>
+            <div class="column">W</div>
+            <div class="column">E</div>
+            <div class="column">R</div>
+            <div class="column">T</div>
+            <div class="column">Y</div>
+            <div class="column">U</div>
+            <div class="column">I</div>
+            <div class="column">O</div>
+            <div class="column">P</div>
+          </div>
 
-        <div class="control">
-          <label> Word Length: </label>
-          <select x-model.number="wordLength">
-            <option>5</option>
-            <option>4</option>
-            <option>3</option>
-          </select>
+          <div class="row">
+            <div class="column">A</div>
+            <div class="column">S</div>
+            <div class="column">D</div>
+            <div class="column">F</div>
+            <div class="column">G</div>
+            <div class="column">H</div>
+            <div class="column">J</div>
+            <div class="column">K</div>
+            <div class="column">L</div>
+          </div>
+
+          <div class="row">
+            <div class="column">Z</div>
+            <div class="column">X</div>
+            <div class="column">C</div>
+            <div class="column">V</div>
+            <div class="column">B</div>
+            <div class="column">N</div>
+            <div class="column">M</div>
+          </div>
         </div>
       </div>
     </div>

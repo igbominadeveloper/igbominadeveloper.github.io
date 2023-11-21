@@ -89,7 +89,6 @@ document.addEventListener('alpine:init', () => {
 
         // if the tile is perfect
         if (word === this.currentWord) {
-          this.tiles.push(word);
           this.getNextWord();
         }
 
