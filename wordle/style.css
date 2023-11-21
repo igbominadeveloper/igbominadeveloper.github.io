@@ -84,8 +84,22 @@ select {
   align-items: center;
 }
 
+.keyboard .row {
+  margin: 0.2rem;
+  display: flex;
+  gap: 10px;
+}
+
 .key {
   cursor: pointer;
+  border-radius: 8px;
+  height: 3rem;
+  width: 3rem;
+  font-size: 20px;
+}
+
+.key:hover {
+  background: #cccc;
 }
 
 @media only screen and (max-width: 600px) {
