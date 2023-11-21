@@ -94,8 +94,11 @@ select {
   cursor: pointer;
   border-radius: 8px;
   height: 3rem;
-  width: 3rem;
+  width: unset;
+  min-width: 3rem;
   font-size: 20px;
+
+  padding: 0 20px;
 }
 
 .key:hover {

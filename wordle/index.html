@@ -79,6 +79,9 @@
           </div>
 
           <div class="row">
+            <div class="column key" @click="backspaceKeyPressed()">
+              Backspace
+            </div>
             <div class="column key" @click="fillTileWithKeyPressed('Z')">Z</div>
             <div class="column key" @click="fillTileWithKeyPressed('X')">X</div>
             <div class="column key" @click="fillTileWithKeyPressed('C')">C</div>
@@ -86,6 +89,7 @@
             <div class="column key" @click="fillTileWithKeyPressed('B')">B</div>
             <div class="column key" @click="fillTileWithKeyPressed('N')">N</div>
             <div class="column key" @click="fillTileWithKeyPressed('M')">M</div>
+            <div class="column key" @click="enterKeyPressed()">Enter</div>
           </div>
         </div>
       </div>
