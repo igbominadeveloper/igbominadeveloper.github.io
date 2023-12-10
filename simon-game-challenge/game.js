@@ -27,7 +27,7 @@ function gameStart() {
 }
 
 function gameStatus() {
-  return document.querySelector('#level-title').innerHTML;
+  return document.querySelector('#level-title').textContent;
 }
 
 function generateNextRandomColor() {
@@ -75,7 +75,7 @@ function checkIfTheRightColorWasClicked(color) {
 }
 
 function setGameStatus(status) {
-  document.querySelector('#level-title').innerHTML = status;
+  document.querySelector('#level-title').textContent = status;
 }
 
 buttons.forEach((button) =>

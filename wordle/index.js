@@ -2,6 +2,10 @@ document.addEventListener('alpine:initialized', () => {
   //we want to focus on the game element
 });
 
+// TODO - non-english words should not be allowed
+// for reach try, color the key tiles
+// show confetti after a word is correct
+// word too short
 document.addEventListener('alpine:init', () => {
   Alpine.data('game', () => ({
     guessesAllowed: 5,
@@ -86,6 +90,7 @@ document.addEventListener('alpine:init', () => {
           return tile;
         });
 
+        this.tiles.push(rowTilesNow);
         this.board[this.currentRowIndex] = rowTilesNow;
 
         // if the tile is perfect

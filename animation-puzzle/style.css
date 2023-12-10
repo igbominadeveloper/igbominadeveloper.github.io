@@ -1,0 +1,67 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+*,
+:before,
+:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.puzzle {
+  padding: 2rem;
+  background: #ecdc5a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.puzzle-piece {
+  min-width: 136px;
+  min-height: 136px;
+}
+
+.puzzle-piece svg {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.puzzle-group {
+  display: flex;
+}
+
+.nitro {
+  transform: rotateZ(-20deg) translate(-20px, -8px);
+}
+
+.citty {
+  transform: translate(-3px, 20px);
+}
+
+.defu {
+  transform: translate(-3px, 20px);
+}
+
+.destr {
+}
+
+.consola {
+  transform: translate(-20px, 18px);
+}
+
+.ofetch {
+  transform: translateX(-5px);
+}
+
+.changelogen {
+  transform: translate(-17px, 10px);
+}
+
+.unbuild {
+  transform: translateY(-8px);
+}
