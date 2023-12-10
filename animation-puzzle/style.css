@@ -8,6 +8,9 @@ body {
 
 body {
   background: #ecdc5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 *,
