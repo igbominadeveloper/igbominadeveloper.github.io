@@ -6,6 +6,10 @@ body {
   width: 100%;
 }
 
+body {
+  background: #ecdc5a;
+}
+
 *,
 :before,
 :after {
@@ -16,7 +20,6 @@ body {
 
 .puzzle {
   padding: 2rem;
-  background: #ecdc5a;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +28,7 @@ body {
 .puzzle-piece {
   min-width: 136px;
   min-height: 136px;
+  transition: all 0.2s ease-in-out;
 }
 
 .puzzle-piece svg {
@@ -35,33 +39,67 @@ body {
   display: flex;
 }
 
+/* row 1 */
 .nitro {
   transform: rotateZ(-20deg) translate(-20px, -8px);
 }
 
 .citty {
-  transform: translate(-3px, 20px);
+  transform: translate(-10px, 20px);
 }
 
+/* row 2 */
 .defu {
-  transform: translate(-3px, 20px);
-}
-
-.destr {
+  transform: translate(-80px, 220px) rotateZ(-20deg);
 }
 
 .consola {
-  transform: translate(-20px, 18px);
+  transform: translate(-27px, 18px);
 }
 
 .ofetch {
-  transform: translateX(-5px);
+  transform: translateX(-15px);
 }
 
+/* row 3 */
 .changelogen {
   transform: translate(-17px, 10px);
 }
 
 .unbuild {
-  transform: translateY(-8px);
+  transform: translate(-8px, -6px);
+}
+
+/* hover */
+
+.puzzle:hover .puzzle-piece {
+  transition: all 0.5 0.5 ease-in-out;
+}
+
+.puzzle:hover .defu {
+  transform: translate(63px, 0px) rotateZ(0deg);
+}
+
+.puzzle:hover .destr {
+  transform: translateX(27px);
+}
+
+.puzzle:hover .ofetch {
+  transform: translateX(-45px);
+}
+
+.puzzle:hover .unbuild {
+  transform: translate(-9px, -40px);
+}
+
+.puzzle:hover .changelogen {
+  transform: translate(9px, -22px);
+}
+
+.puzzle:hover .citty {
+  transform: translate(-9px, 55px);
+}
+
+.puzzle:hover .nitro {
+  transform: rotateZ(0) translate(27px, 37px);
 }
