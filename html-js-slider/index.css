@@ -1,0 +1,52 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  /* background: black; */
+  display: grid;
+  place-content: center;
+}
+
+*,
+:before,
+:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider {
+  height: 30rem;
+  display: flex;
+  gap: 1rem;
+  width: 50rem;
+  justify-content: center;
+}
+
+.slide {
+  border-radius: 2rem;
+  width: 5rem;
+  cursor: pointer;
+  transition: width 500ms ease-in-out;
+}
+
+.slide:nth-child(1) {
+  background: url('./images/1.jpeg');
+}
+.slide:nth-child(2) {
+  background: url('./images/2.jpeg');
+}
+.slide:nth-child(3) {
+  background: url('./images/3.jpeg');
+}
+.slide:nth-child(4) {
+  background: url('./images/4.jpeg');
+}
+.slide:nth-child(5) {
+  background: url('./images/5.jpeg');
+}
