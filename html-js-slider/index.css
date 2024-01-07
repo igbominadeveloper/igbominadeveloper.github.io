@@ -71,6 +71,32 @@ body {
   color: black;
 }
 
+/* color */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  /* Light theme styles go here */
+  body {
+    background: white;
+  }
+}
+
+.dark-mode {
+  background: black;
+}
+
+.light-mode {
+  background: white;
+}
+
+.light-mode .moon {
+  color: black;
+}
+
 .orientation button {
   padding: 0.5rem 1rem;
   align-self: center;
@@ -155,26 +181,4 @@ body {
   to {
     transform: translateY(3rem);
   }
-}
-
-/* color */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: black;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  /* Light theme styles go here */
-  body {
-    background: white;
-  }
-}
-
-.dark-mode {
-  background: black;
-}
-
-.light-mode {
-  background: white;
 }

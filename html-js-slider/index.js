@@ -44,23 +44,18 @@ const toggleTheme = () => {
 
   if (prefersDarkScheme.matches) {
     if (darkMode) {
-      document.body.classList.toggle('light-mode');
-
+      document.body.classList.add('light-mode');
+      document.body.classList.remove('dark-mode');
       darkTheme.style.display = 'block';
       lightTheme.style.display = 'none';
     } else {
-      document.body.classList.toggle('dark-mode');
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+
       darkTheme.style.display = 'none';
       lightTheme.style.display = 'block';
     }
   }
-
-  //   document.body.classList.remove('dark-mode');
-  //   document.body.classList.add('light-mode');
-  // } else {
-  //   document.body.classList.remove('light-mode');
-  //   document.body.classList.add('dark-mode');
-  // }
 };
 
 // register event listeners
