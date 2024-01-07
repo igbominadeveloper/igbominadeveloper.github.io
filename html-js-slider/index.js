@@ -16,16 +16,18 @@ if (document.body.classList.contains('dark-mode')) {
 }
 
 const expandItem = (event) => {
-  resetFlexBasis();
+  resetFlexBasis(event.currentTarget);
 
   const element = event.currentTarget;
-  element.style.flexBasis = '60%';
-  element.style.justifyContent = 'flex-start';
-  element.style.paddingLeft = '1rem';
+  element.classList.toggle('expanded');
 };
 
-const resetFlexBasis = () => {
-  slides.forEach((slide) => (slide.style.flexBasis = ''));
+const resetFlexBasis = (currentTarget) => {
+  const allSlides = Array.from(slides);
+
+  allSlides
+    .filter((slide) => slide.id !== currentTarget.id)
+    .forEach((slide) => slide.classList.remove('expanded'));
 };
 
 const changeOrientation = (event) => {
