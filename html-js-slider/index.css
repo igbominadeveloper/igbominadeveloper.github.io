@@ -10,6 +10,7 @@ body {
   /* background: black; */
   display: grid;
   place-content: center;
+  position: relative;
 }
 
 *,
@@ -20,12 +21,38 @@ body {
   box-sizing: border-box;
 }
 
+.orientation {
+  margin: 2rem auto;
+  position: fixed;
+  bottom: 41.5rem;
+  right: 5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.orientation button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid gray;
+  cursor: pointer;
+  text-transform: capitalize;
+  background: white;
+  color: black;
+}
+
+.orientation button:hover,
+.orientation button:focus {
+  background: gray;
+  color: white;
+}
+
 .slider {
   height: 30rem;
   display: flex;
   gap: 1rem;
-  width: 60rem;
+  width: 45rem;
   justify-content: center;
+  transition: all 500ms ease-in-out;
 }
 
 .slide {
@@ -52,7 +79,7 @@ body {
   width: 3rem;
   position: absolute;
   bottom: 20px;
-  left: 16px;
+  left: 12px;
 
   display: grid;
   place-items: center;
