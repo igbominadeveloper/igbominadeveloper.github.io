@@ -118,7 +118,7 @@ body {
   height: 30rem;
   display: flex;
   gap: 1rem;
-  width: 45rem;
+  width: 50rem;
   justify-content: center;
   transition: all 500ms ease-in-out;
 }
