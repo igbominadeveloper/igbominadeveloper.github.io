@@ -21,17 +21,52 @@ body {
   box-sizing: border-box;
 }
 
-.orientation {
-  margin: 2rem auto;
+.controls {
+  margin: 1rem;
   position: fixed;
-  bottom: 41.5rem;
-  right: 5rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+
+.orientation {
   display: flex;
   gap: 1rem;
 }
 
+.theme-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.theme-toggle button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.theme-toggle button:hover {
+  background: rgb(246, 243, 243);
+}
+
+.theme-toggle button svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+.sun {
+  color: rgb(242, 203, 131);
+}
+
 .orientation button {
   padding: 0.5rem 1rem;
+  align-self: center;
   border-radius: 8px;
   border: 2px solid gray;
   cursor: pointer;
@@ -78,7 +113,7 @@ body {
   height: 3rem;
   width: 3rem;
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 12px;
 
   display: grid;

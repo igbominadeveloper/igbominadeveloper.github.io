@@ -7,10 +7,42 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="orientation">
-      <button>landscape</button>
-      <button>portrait</button>
-    </div>
+    <section class="controls">
+      <div class="theme-toggle">
+        <button class="moon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M17 11V8h-3V6h3V3h2v3h3v2h-3v3h-2Zm-6 8q1.35 0 2.513-.537t1.987-1.488q-3.15-.2-5.325-2.488T8 9q0-.325.025-.638T8.1 7.75q-1.4.775-2.25 2.163T5 13q0 2.5 1.75 4.25T11 19Zm0 2q-3.35 0-5.675-2.325T3 13q0-3.35 2.325-5.675T11 5q.125 0 .25.012t.25.013q-.725.8-1.113 1.812T10 9q0 2.5 1.75 4.25T16 15q.8 0 1.525-.2t1.375-.55q-.45 2.875-2.663 4.813T11 21Zm-.825-6.525Z"
+            />
+          </svg>
+        </button>
+
+        <button class="sun">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M11 4V1h2v3h-2Zm0 19v-3h2v3h-2Zm9-10v-2h3v2h-3ZM1 13v-2h3v2H1Zm17.7-6.3l-1.4-1.4l1.75-1.8l1.45 1.45l-1.8 1.75ZM4.95 20.5L3.5 19.05l1.8-1.75l1.4 1.4l-1.75 1.8Zm14.1 0l-1.75-1.8l1.4-1.4l1.8 1.75l-1.45 1.45ZM5.3 6.7L3.5 4.95L4.95 3.5L6.7 5.3L5.3 6.7ZM12 18q-2.5 0-4.25-1.75T6 12q0-2.5 1.75-4.25T12 6q2.5 0 4.25 1.75T18 12q0 2.5-1.75 4.25T12 18Zm0-2q1.675 0 2.838-1.163T16 12q0-1.675-1.163-2.838T12 8q-1.675 0-2.838 1.163T8 12q0 1.675 1.163 2.838T12 16Zm0-4Z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="orientation">
+        <button>landscape</button>
+        <button>portrait</button>
+      </div>
+    </section>
 
     <div class="slider">
       <div class="slide one">
