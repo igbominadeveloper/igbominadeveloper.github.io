@@ -24,15 +24,33 @@ body {
   height: 30rem;
   display: flex;
   gap: 1rem;
-  width: 50rem;
+  width: 60rem;
   justify-content: center;
 }
 
 .slide {
   border-radius: 2rem;
-  width: 5rem;
+  flex-basis: 5rem;
   cursor: pointer;
-  transition: width 500ms ease-in-out;
+  transition: flex-basis 500ms ease-in-out;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+  color: white;
+}
+
+.slide > span {
+  border-radius: 100%;
+  border: 2px solid white;
+  font-size: medium;
+  height: 3rem;
+  width: 3rem;
+
+  display: grid;
+  place-items: center;
 }
 
 .slide:nth-child(1) {
@@ -49,4 +67,14 @@ body {
 }
 .slide:nth-child(5) {
   background: url('./images/5.jpeg');
+}
+
+@keyframes dance {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(3rem);
+  }
 }
