@@ -7,7 +7,6 @@ body {
 }
 
 body {
-  /* background: black; */
   display: grid;
   place-content: center;
   position: relative;
@@ -64,6 +63,14 @@ body {
   color: rgb(242, 203, 131);
 }
 
+.moon {
+  color: white;
+}
+
+.theme-toggle button:hover .moon {
+  color: black;
+}
+
 .orientation button {
   padding: 0.5rem 1rem;
   align-self: center;
@@ -114,11 +121,13 @@ body {
   width: 3rem;
   position: absolute;
   bottom: 15px;
-  left: 12px;
+  left: 16px;
 
   display: grid;
   place-items: center;
 }
+
+/* slide images */
 
 .slide:nth-child(1) {
   background: url('./images/1.jpeg');
@@ -136,6 +145,8 @@ body {
   background: url('./images/5.jpeg');
 }
 
+/* Animation */
+
 @keyframes dance {
   from {
     transform: translateY(0);
@@ -144,4 +155,26 @@ body {
   to {
     transform: translateY(3rem);
   }
+}
+
+/* color */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  /* Light theme styles go here */
+  body {
+    background: white;
+  }
+}
+
+.dark-mode {
+  background: black;
+}
+
+.light-mode {
+  background: white;
 }
