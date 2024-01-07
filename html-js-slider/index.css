@@ -172,8 +172,8 @@ body {
 
 .slider-control button {
   border: none;
-  background: white;
   cursor: pointer;
+  background: none;
   border-radius: 100%;
   display: grid;
   place-content: center;
@@ -181,7 +181,26 @@ body {
 }
 
 .slider-control button:hover {
-  background: rgb(247, 245, 245);
+  background: rgb(94, 93, 93);
+}
+
+.slider-control .left-arrow,
+.slider-control .right-arrow {
+  color: white;
+}
+
+.light-mode .slider-control .left-arrow,
+.light-mode .slider-control .right-arrow {
+  color: black;
+}
+
+.light-mode .slider-control button:hover {
+  background: rgb(39, 39, 39);
+}
+
+.light-mode .slider-control button:hover .left-arrow,
+.light-mode .slider-control button:hover .right-arrow {
+  color: white;
 }
 
 /* slide images */
