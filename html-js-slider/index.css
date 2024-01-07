@@ -120,6 +120,9 @@ body {
   gap: 1rem;
   width: 50rem;
   justify-content: center;
+}
+
+.slider-container {
   transition: all 500ms ease-in-out;
 }
 
@@ -157,6 +160,28 @@ body {
 
   display: grid;
   place-items: center;
+}
+
+.slider-control {
+  margin-top: 2rem;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, max-content);
+  gap: 1rem;
+}
+
+.slider-control button {
+  border: none;
+  background: white;
+  cursor: pointer;
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
+  padding: 0.5rem;
+}
+
+.slider-control button:hover {
+  background: rgb(247, 245, 245);
 }
 
 /* slide images */
