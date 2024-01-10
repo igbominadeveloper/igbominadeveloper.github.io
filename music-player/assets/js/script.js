@@ -29,7 +29,6 @@ const resetToDefault = () => {
 };
 
 const playSong = () => {
-  debugger;
   song.play();
 
   playIcon.classList.add('paused');
